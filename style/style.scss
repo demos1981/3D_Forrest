@@ -1,0 +1,111 @@
+
+@import "nullstyle.scss";
+@font-face {
+    font-family: kamerik-3d;
+    src: url('/fonts/kamerik205-heavy.woff2') ;
+    font-weight:900;
+   
+}
+@font-face {
+    font-family: 'merriweather-italic-3d';
+    src: url('/fonts/merriweather-regular-italic.woff2');
+ 
+}
+
+// :root{
+// --index:calc(1vw + 1vh);
+// --transition:2s cubic-bezier(.05,.5,0,1);
+// }
+
+    $index: calc(1vw + 1vh);
+    $transition:2s cubic-bezier(.05,.5,0,1);
+
+
+
+body{
+    background-color:black;
+    color:white;
+    font-family: kamerik-3d;
+    .layers{
+        overflow: hidden;
+        perspective:1000px;
+        .layers__container{
+            height:100vh;
+            transform-style:preserve-3d;
+            transform:rotateX(var(--move-y)) rotateY(var(--move-x));
+            will-change:transform;
+            transition:transform $transition;
+            .layers__item{
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                position: absolute;
+                inset: -5vw;
+                background-size: cover;
+                background-position: center;
+                
+               
+            }
+            .layer-1{
+                transform:translateZ(-55px) scale(1.06);
+            }
+            .layer-2{
+                transform:translateZ(80px) scale(.9);
+              
+            }
+            .layer-3{
+                transform:translateZ(180px) scale(.9);
+                .hero-content{
+                    font-size:calc(($index)*2.9);
+                    transition:$transition;
+                    text-align: center;
+                    text-transform: uppercase;
+                    letter-spacing:calc(($index)* -.15);
+                    line-height: 1.15em;
+                    margin-top: calc(($index)* 5.5);
+                    .hero-content_p{
+                        text-transform: none;
+                        font-family:merriweather-italic-3d;
+                        font-size:calc(($index)*.7); 
+                        letter-spacing:normal;
+                        line-height: 2;
+                    }
+                    .button-start{
+                        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        font-size: calc(($index)*.6);
+                        letter-spacing:-.01vw;
+                        padding:calc(($index)*.4) calc(($index)*.8);
+                         background-color: transparent;
+                        color:white;
+                        border:rgb(255 255 255 / .3)2px solid;
+                        border-radius: 10em;
+                        outline:none;
+                        cursor:pointer;
+                   
+                       
+
+                    }
+                }
+            }
+            .layer-4{
+                transform:translateZ(190px) scale(.9);
+                pointer-events:none;
+            }
+            .layer-5{
+                transform:translateZ(300px) scale(.9);
+                pointer-events:none;
+            }
+            .layer-6{
+                transform:translateZ(380px);
+                pointer-events:none;
+            }
+        }
+
+    }
+     
+
+    
+}

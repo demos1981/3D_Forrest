@@ -1,0 +1,183 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+@font-face {
+  font-family: kamerik-3d;
+  src: url("/fonts/kamerik205-heavy.woff2");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "merriweather-italic-3d";
+  src: url("/fonts/merriweather-regular-italic.woff2");
+}
+body {
+  background-color: black;
+  color: white;
+  font-family: kamerik-3d;
+}
+body .layers {
+  overflow: hidden;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+body .layers .layers__container {
+  height: 100vh;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+          transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+  will-change: transform;
+  -webkit-transition: -webkit-transform 2s cubic-bezier(0.05, 0.5, 0, 1);
+  transition: -webkit-transform 2s cubic-bezier(0.05, 0.5, 0, 1);
+  transition: transform 2s cubic-bezier(0.05, 0.5, 0, 1);
+  transition: transform 2s cubic-bezier(0.05, 0.5, 0, 1), -webkit-transform 2s cubic-bezier(0.05, 0.5, 0, 1);
+}
+body .layers .layers__container .layers__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  inset: -5vw;
+  background-size: cover;
+  background-position: center;
+}
+body .layers .layers__container .layer-1 {
+  -webkit-transform: translateZ(-55px) scale(1.06);
+          transform: translateZ(-55px) scale(1.06);
+}
+body .layers .layers__container .layer-2 {
+  -webkit-transform: translateZ(80px) scale(0.9);
+          transform: translateZ(80px) scale(0.9);
+}
+body .layers .layers__container .layer-3 {
+  -webkit-transform: translateZ(180px) scale(0.9);
+          transform: translateZ(180px) scale(0.9);
+}
+body .layers .layers__container .layer-3 .hero-content {
+  font-size: calc((1vw + 1vh) * 2.9);
+  -webkit-transition: 2s cubic-bezier(0.05, 0.5, 0, 1);
+  transition: 2s cubic-bezier(0.05, 0.5, 0, 1);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: calc((1vw + 1vh) * -0.15);
+  line-height: 1.15em;
+  margin-top: calc((1vw + 1vh) * 5.5);
+}
+body .layers .layers__container .layer-3 .hero-content .hero-content_p {
+  text-transform: none;
+  font-family: merriweather-italic-3d;
+  font-size: calc((1vw + 1vh) * 0.7);
+  letter-spacing: normal;
+  line-height: 2;
+}
+body .layers .layers__container .layer-3 .hero-content .button-start {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: calc((1vw + 1vh) * 0.6);
+  letter-spacing: -0.01vw;
+  padding: calc((1vw + 1vh) * 0.4) calc((1vw + 1vh) * 0.8);
+  background-color: transparent;
+  color: white;
+  border: rgba(255, 255, 255, 0.3) 2px solid;
+  border-radius: 10em;
+  outline: none;
+  cursor: pointer;
+}
+body .layers .layers__container .layer-4 {
+  -webkit-transform: translateZ(190px) scale(0.9);
+          transform: translateZ(190px) scale(0.9);
+  pointer-events: none;
+}
+body .layers .layers__container .layer-5 {
+  -webkit-transform: translateZ(300px) scale(0.9);
+          transform: translateZ(300px) scale(0.9);
+  pointer-events: none;
+}
+body .layers .layers__container .layer-6 {
+  -webkit-transform: translateZ(380px);
+          transform: translateZ(380px);
+  pointer-events: none;
+}
